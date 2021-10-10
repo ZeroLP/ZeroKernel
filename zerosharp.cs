@@ -105,33 +105,20 @@ namespace Internal.Runtime.CompilerHelpers
 
 unsafe class Program
 {
-    [DllImport("kernel32")]
-    static extern IntPtr GetStdHandle(int nStdHandle);
-
-    [DllImport("kernel32")]
-    static extern IntPtr WriteConsoleW(IntPtr hConsole, void* lpBuffer, int charsToWrite, out int charsWritten, void* reserved);
-
     [RuntimeExport("Main")]
     static int Main()
     {
-        //zerosharp example
-        /*string hello = "Hello world!\n";
-        fixed (char* pHello = hello)
-        {
-            WriteConsoleW(GetStdHandle(-11), pHello, hello.Length, out int _, null);
-        }*/
-
         return 42;
     }
 
     [System.Runtime.RuntimeExport("MainDriverEntry")]
     static uint/*NTSTATUS*/ MainDriverEntry()
     {
-        //Find a way to marshal C# string to LPCSTR without CoreCLR runtime running....
-        //Marshalling string is also needed for calling imported functions from kernel32.dll
-        
-        //nint ntoskrnl_DbgPrintPtr = GetProcAddress(GetModuleHandleA("NtosKrnl.exe"), "DbgPrint");
-        //((delegate* unmanaged[Stdcall]<[MarshalAs(UnmanagedType.LPSTR)] string, void>)ntoskrnl_DbgPrintPtr)("Hello World!");
+        /*string nullTermUTF16String = "Hello World\n";
+        fixed(char* pStr = nullTermUTF16String)
+        {
+            //Do something.
+        }*/
 
         return 0x00000000; //NTSTAUS_SUCCESS
     }

@@ -35,8 +35,8 @@
 @if "%1" == "clean" exit /B
 
 csc /nologo /debug:embedded /noconfig /nostdlib /runtimemetadataversion:v4.0.30319 zerosharp.cs /out:zerosharp.ilexe /langversion:latest /unsafe || goto Error
-%ILCPATH%\ilc zerosharp.ilexe -o zerosharp.obj --systemmodule zerosharp --map zerosharp.map -O --directpinvoke:kernel32 || goto Error
-link /nologo /subsystem:native zerosharp.obj /entry:MainDriverEntry kernel32.lib /incremental:no /out:test.sys || goto Error
+%ILCPATH%\ilc zerosharp.ilexe -o zerosharp.obj --systemmodule zerosharp --map zerosharp.map -O || goto Error
+link /nologo /subsystem:native /DRIVER:WDM zerosharp.obj /entry:MainDriverEntry /incremental:no /out:test.sys || goto Error
 
 @goto :EOF
 
