@@ -21,3 +21,4 @@ This project contains parts of [KernelSharp](https://github.com/VollRagm/KernelS
 -  ~~Get the driver to output "Hello World" string from a kernel debugger after solving TODO #2.~~
 - Whatever is needed after TODO #3
 
+![](https://github.com/ZeroLP/ZeroKernel/blob/master/HelloWorldPrint.JPG)
