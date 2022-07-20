@@ -11,14 +11,14 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <DisableImplicitNamespaceImports_DotNet>true</DisableImplicitNamespaceImports_DotNet>
-
     <IlcSystemModule>noruntime</IlcSystemModule>
-
     <ApplicationIcon />
-
     <StartupObject />
-
     <Configurations>Release</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
 <ItemGroup>

@@ -136,3 +136,7 @@ $RECYCLE.BIN/
 *.db
 zerosharp.ilexe
 zerosharp.map
+/.vs/ZeroKernel
+/ZeroKernel.sln
+/ZeroKernel.map
+/ZeroKernel.ilexe

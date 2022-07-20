@@ -34,9 +34,9 @@
 
 @if "%1" == "clean" exit /B
 
-csc /nologo /debug:embedded /noconfig /nostdlib /runtimemetadataversion:v4.0.30319 zerosharp.cs /out:zerosharp.ilexe /langversion:latest /unsafe || goto Error
-%ILCPATH%\ilc zerosharp.ilexe -o zerosharp.obj --systemmodule zerosharp --map zerosharp.map -O || goto Error
-link /nologo /subsystem:native /DRIVER:WDM zerosharp.obj /entry:MainDriverEntry /incremental:no /out:test.sys || goto Error
+csc /nologo /debug:embedded /noconfig /nostdlib /runtimemetadataversion:v4.0.30319 Program.cs WDK.cs CLibNatives/CFunctions.cs CLR/CompilerHelpers.cs CLR/CompilerServices.cs CLR/System.cs CLR/Runtime.cs /out:ZeroKernel.ilexe /langversion:latest /unsafe || goto Error
+%ILCPATH%\ilc ZeroKernel.ilexe -o ZeroKernel.obj --systemmodule ZeroKernel --map ZeroKernel.map -O || goto Error
+link "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.19041.0\km\x64\ntoskrnl.lib" /nologo /subsystem:native /DRIVER:WDM ZeroKernel.obj /entry:DriverEntry /incremental:no /out:test.sys || goto Error
 
 @goto :EOF
 
