@@ -1,6 +1,6 @@
 # ZeroKernel (Experimental)
 Bringing kernel driver to C# with NativeAOT. 
-It references some part of the ![zerosharp](https://github.com/MichalStrehovsky/zerosharp) project by Michael Strehovsky for removing the runtime.
+It references some part of the [zerosharp](https://github.com/MichalStrehovsky/zerosharp) project by Michael Strehovsky for removing the runtime.
 
 # Building
 Publish the project with latest Visual Studio 2022 and .NET 7 installed.
