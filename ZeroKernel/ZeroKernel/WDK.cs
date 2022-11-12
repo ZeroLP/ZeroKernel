@@ -84,7 +84,7 @@ namespace ZeroKernel
             NonPagedPoolSessionNx = NonPagedPoolNx + 32,
         }
 
-        public enum NTSTATUS : uint
+        public enum NTSTATUS : ulong
         {
             Success = 0x00000000,
             Wait0 = 0x00000000,

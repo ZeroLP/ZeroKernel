@@ -22,4 +22,6 @@
     {
         public MethodImplAttribute(MethodImplOptions opt) { }
     }
+
+    public class CallConvCdecl { }
 }

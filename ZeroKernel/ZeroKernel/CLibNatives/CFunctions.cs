@@ -1,8 +1,8 @@
-﻿using ZeroKernel;
+﻿using System;
 
 namespace ZeroKernel.CLibNatives
 {
-    public unsafe class CFunctions
+    internal unsafe class CFunctions
     {
         //https://github.com/VollRagm/KernelSharp/blob/743fa03e35ed98bac46bf9200d80762016cd908d/KernelSharp/WDK.cs#L81
         public static char* c_str(string str)

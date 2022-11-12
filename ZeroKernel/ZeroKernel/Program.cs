@@ -1,12 +1,18 @@
-using System;
+﻿using ZeroKernel.CLibNatives;
 using System.Runtime;
-using ZeroKernel.CLibNatives;
+using System.Runtime.InteropServices;
 
 namespace ZeroKernel
 {
-    unsafe class Program
+    public unsafe class Program
     {
         static void Main() { }
+
+        [RuntimeExport("wmainCRTStartup")]
+        static void wmainCRTStartup()
+        {
+
+        }
 
         [RuntimeExport("DriverEntry")]
         static WDK.NTSTATUS DriverEntry()
