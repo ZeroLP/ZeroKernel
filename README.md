@@ -1,10 +1,10 @@
 # ZeroKernel (Experimental)
-Bringing kernel driver to C# with MichalStrehovsky's zerosharp
-
-A magical combination of https://github.com/MichalStrehovsky/zerosharp and https://github.com/dotnet/runtimelab/tree/feature/NativeAOT 
+Bringing kernel driver to C# with NativeAOT. 
+It references some part of the ![zerosharp](https://github.com/MichalStrehovsky/zerosharp) project by Michael Strehovsky for removing the runtime.
 
 # Building
-Run build.cmd from 'Developer Command Prompt for VS [Version] (2022 in my case)` for a get-go compilation. 
+Publish the project with latest Visual Studio 2022 and .NET 7 installed.
+Currently the ILC will complain that there is no native executable produced for it to link and the publish will fail. Just disregard that. You will nonetheless see a driver executable in the publish path.
 
  ~~Right now the driver is loadable (with kdmapper) but without any executable code.~~
  It prints "Hello World!".
